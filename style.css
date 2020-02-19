@@ -1,0 +1,7 @@
+.similar {
+    cursor: pointer;    
+}
+
+.similar:hover {
+    font-weight: bold;
+}

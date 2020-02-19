@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>SOKE LASTFM</title>
 </head>
 <!--
@@ -13,15 +14,18 @@
 <body>
     <div id="main">
         <h1>SOKE LASTFM</h1>
-        <input type="text" name="inputArtist" value="" v-model="artist" @keyup.enter="getArtist()" placeholder="Haettava artisti">
+        <input type="text" name="inputArtist" value="" v-model="artist" @keyup.enter="getArtist(artist)" placeholder="Haettava artisti">
 
-        <h2>{{ artistName }}</h2>
+        <h2>{{ artistName }}</h2>        
         <img :src="artistPic"/>
         <p>{{ summary }}</p>
-        <h3>{{ similarTitle }}</h3>
-        <p v-for="artist in similars">{{ artist.name }}</p>
 
-        <br/>
+        <h3>{{ genreTitle }}</h3>
+        <div class="similar" v-for="tag in tags" @click="getGenre(tag.name)">{{ tag.name }}</div>
+
+        <h3>{{ similarTitle }}</h3>
+        <div class="similar" v-for="artist in similars" @click="getArtist(artist.name)">{{ artist.name }}</div>
+
         <p>{{ result }}</p>
     </div>
 
