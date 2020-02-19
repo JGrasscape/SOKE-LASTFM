@@ -12,10 +12,30 @@
 -->
 <body>
     <div id="main">
-        <h1>SOKE LASTFM {{ title }} 2</h1>
+        <h1>SOKE LASTFM</h1>
+        <input type="text" name="inputArtist" value="" v-model="artist" @keyup.enter="getArtist()" placeholder="Haettava artisti">
+
+        <h2>{{ artistName }}</h2>
+        <img :src="artistPic"/>
+        <p>{{ summary }}</p>
+        <h3>{{ similarTitle }}</h3>
+        <p v-for="artist in similars">{{ artist.name }}</p>
+
+        <br/>
+        <p>{{ result }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
+
+<!--
+Here are the details of your new API account.
+
+Application name	SOKE LASTFM
+API key             a9d080270634ad741de3ea9de4ab43a1
+Shared secret	    adb3abae0f3b62dcb5a45cda2121e28b
+Registered to	    Apu-Heikki
+-->
