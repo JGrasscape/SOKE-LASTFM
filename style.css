@@ -1,7 +1,21 @@
 .similar {
-    cursor: pointer;    
+    cursor: pointer;   
+    /*color:  #476D7C;*/
 }
 
 .similar:hover {
     font-weight: bold;
+}
+
+input {
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 5px;
+    width: 300px;
+    /*background-color: #476D7C;    */
+}
+
+body {
+    /*background-color: #1D3E53;
+    color: #77ABB7;*/
 }

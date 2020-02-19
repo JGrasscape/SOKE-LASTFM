@@ -22,6 +22,8 @@ var app = new Vue ({
                 app.tags = response.data.artist.tags.tag; 
                 app.similarTitle = 'Samankaltaisia artisteja:';
                 app.similars = response.data.artist.similar.artist;
+
+                app.result = response.data;
             })
             .catch(function (error) {
                 app.result = 'Error ! Could not reach the API. ' + error;
