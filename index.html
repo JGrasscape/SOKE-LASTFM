@@ -14,7 +14,9 @@
 <body>
     <div id="main">
         <h1>SOKE LASTFM</h1>
-        <input type="text" name="inputArtist" value="" v-model="artist" @keyup.enter="getArtist(artist)" placeholder="Haettava artisti">
+        <input type="text" name="apiKey" value="" v-model="apiKey" @keyup.enter="getApiKey(apiKey)" placeholder="Anna Last.fm API key" v-show="askApi">
+
+        <input type="text" name="inputArtist" value="" v-model="artist" @keyup.enter="getArtist(artist)" placeholder="Haettava artisti" v-show="!askApi">
 
         <h2>{{ artistName }}</h2>        
         <img :src="artistPic"/>
@@ -34,12 +36,3 @@
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
-
-<!--
-Here are the details of your new API account.
-
-Application name	SOKE LASTFM
-API key             a9d080270634ad741de3ea9de4ab43a1
-Shared secret	    adb3abae0f3b62dcb5a45cda2121e28b
-Registered to	    Apu-Heikki
--->

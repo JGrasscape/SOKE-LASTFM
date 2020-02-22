@@ -1,7 +1,8 @@
 var app = new Vue ({
     el: '#main',
     data: {   
-        apiKey: 'a9d080270634ad741de3ea9de4ab43a1',
+        apiKey: '',
+        askApi: true,
         artist: '',
         artistName: '',  
         artistPic: '',    
@@ -13,6 +14,21 @@ var app = new Vue ({
         result: ''
     },
     methods: {
+        getApiKey: function(apiKey) {
+            this.apiKey = apiKey;
+            this.askApi = false;
+
+            /*
+            // Testataan API key
+            axios.get('http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key='+this.apiKey+'&format=json').then(function (response) {
+                // Onnistui, piilotetaan API key kysely ja näytetään artistin haku
+                app.result = response.data;
+            })
+            .catch(function (error) {
+                app.result = 'Error ! Could not reach the API. ' + error;
+            })
+            */            
+        },
         getArtist: function(artist) {
             // Haetaan artistin tiedot Last.fm rajapinnasta
             axios.get('http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist='+artist+'&api_key='+this.apiKey+'&format=json').then(function (response) {
