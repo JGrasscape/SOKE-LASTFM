@@ -15,19 +15,22 @@ var app = new Vue ({
     },
     methods: {
         getApiKey: function(apiKey) {
-            this.apiKey = apiKey;
-            this.askApi = false;
-
-            /*
+            this.apiKey = apiKey;            
+            
             // Testataan API key
-            axios.get('http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key='+this.apiKey+'&format=json').then(function (response) {
-                // Onnistui, piilotetaan API key kysely ja näytetään artistin haku
-                app.result = response.data;
-            })
-            .catch(function (error) {
-                app.result = 'Error ! Could not reach the API. ' + error;
-            })
-            */            
+            axios
+                .get('http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key='+this.apiKey+'&format=json')
+                .then(response => {
+                    // Onnistui, piilotetaan API key kysely ja näytetään artistin haku
+                    app.result = 'API key hyväksytty, jatka hakemalla artistia/yhtyettä.';
+                    this.askApi = false;
+                })
+                .catch(error => {
+                    // Epäonnistui, tulostetaan error ja pyydetään toista API keytä                      
+                    this.askApi = true;
+                    this.apiKey = '';            
+                    app.result = 'Error! ' + error.data.message;                
+                })  
         },
         getArtist: function(artist) {
             // Haetaan artistin tiedot Last.fm rajapinnasta
@@ -39,8 +42,6 @@ var app = new Vue ({
                 app.tags = response.data.artist.tags.tag; 
                 app.similarTitle = 'Samankaltaisia artisteja:';
                 app.similars = response.data.artist.similar.artist;
-
-                app.result = response.data;
             })
             .catch(function (error) {
                 app.result = 'Error ! Could not reach the API. ' + error;
