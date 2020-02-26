@@ -42,6 +42,7 @@ var app = new Vue ({
                 app.tags = response.data.artist.tags.tag; 
                 app.similarTitle = 'Samankaltaisia artisteja:';
                 app.similars = response.data.artist.similar.artist;
+                app.result = '';
             })
             .catch(function (error) {
                 app.result = 'Error ! Could not reach the API. ' + error;
@@ -56,6 +57,7 @@ var app = new Vue ({
                 app.summary = response.data.tag.wiki.summary;
                 app.genreTitle = '';
                 app.tags = ''; 
+                app.result = '';
             })
             .catch(function (error) {
                 app.result = 'Error ! Could not reach the API. ' + error;

@@ -20,7 +20,7 @@
 
         <h2>{{ artistName }}</h2>        
         <img :src="artistPic"/>
-        <p>{{ summary }}</p>
+        <p class="summary">{{ summary }}</p>
 
         <h3>{{ genreTitle }}</h3>
         <div class="similar" v-for="tag in tags" @click="getGenre(tag.name)">{{ tag.name }}</div>
@@ -29,6 +29,9 @@
         <div class="similar" v-for="artist in similars" @click="getArtist(artist.name)">{{ artist.name }}</div>
 
         <p>{{ result }}</p>
+    </div>
+    <div id="footer">
+        <p>&copy; Janne Ruohoniemi</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

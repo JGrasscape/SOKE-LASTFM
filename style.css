@@ -1,21 +1,42 @@
 .similar {
     cursor: pointer;   
-    /*color:  #476D7C;*/
+    color:  #6c5aa1;
 }
 
 .similar:hover {
     font-weight: bold;
 }
 
+.summary { 
+    color:  #6c5aa1;
+}
+
 input {
-    border-radius: 25px;
-    border: 2px solid black;
+    border-radius: 25px;    
     padding: 5px;
     width: 300px;
-    /*background-color: #476D7C;    */
+    background-color: #1d1d3b;
+    color: #8869b8;
 }
 
 body {
-    /*background-color: #1D3E53;
-    color: #77ABB7;*/
+    background-color: #1d1d3b;
+    color: #8869b8;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#main {
+    max-width: 800px;    
+    margin: auto;
+    text-align: center;
+    background-color: #2a2854;
+    border: 10px groove #402459;
+    padding: 10px;
+}
+
+#footer {
+    max-width: 800px;    
+    margin: auto;
+    text-align: center;
+    color:  #6c5aa1;
 }
