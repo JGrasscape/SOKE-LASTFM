@@ -1,4 +1,4 @@
-.similar {
+.links {
     cursor: pointer;   
     color:  #6c5aa1;
     display: inline-block;
@@ -6,7 +6,7 @@
     text-decoration: underline;
 }
 
-.similar:hover {
+.links:hover {
     font-weight: bold;
 }
 

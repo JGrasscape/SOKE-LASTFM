@@ -7,13 +7,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>SOKE LASTFM</title>
 </head>
-<!--
-    https://github.com/JGrasscape/SOKE-LASTFM 
-    https://jgrasscape.github.io/SOKE-LASTFM/
--->
 <body>
     <div id="main">
-        <h1>SOKE LASTFM</h1>
+        <h1>SOKE-harjoitustyö: LASTFM API</h1>
         <input type="text" name="apiKey" value="" v-model="apiKey" @keyup.enter="getApiKey(apiKey)" placeholder="Anna Last.fm API key" v-show="askApi">
 
         <input type="text" name="inputArtist" value="" v-model="artist" @keyup.enter="getArtist(artist)" placeholder="Haettava artisti" v-show="!askApi">
@@ -23,10 +19,10 @@
         <p class="summary">{{ summary }}</p>
 
         <h3>{{ genreTitle }}</h3>
-        <div class="similar" v-for="tag in tags" @click="getGenre(tag.name)">{{ tag.name }}</div>
+        <div class="links" v-for="tag in tags" @click="getGenre(tag.name)">{{ tag.name }}</div>
 
         <h3>{{ similarTitle }}</h3>
-        <div class="similar" v-for="artist in similars" @click="getArtist(artist.name)">{{ artist.name }}</div>
+        <div class="links" v-for="artist in similars" @click="getArtist(artist.name)">{{ artist.name }}</div>
 
         <p>{{ result }}</p>
     </div>
