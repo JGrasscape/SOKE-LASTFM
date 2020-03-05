@@ -54,7 +54,6 @@ var app = new Vue ({
                 app.tags = response.data.artist.tags.tag; 
                 app.similarTitle = 'Samankaltaisia artisteja:';
                 app.similars = response.data.artist.similar.artist;
-                app.result = '';
             })
             .catch(function (error) {
                 app.clearView();
