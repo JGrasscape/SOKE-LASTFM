@@ -1,6 +1,9 @@
 .similar {
     cursor: pointer;   
     color:  #6c5aa1;
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: underline;
 }
 
 .similar:hover {
