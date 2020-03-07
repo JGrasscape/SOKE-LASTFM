@@ -12,3 +12,6 @@ genret sekä palvelun suosittelemia samankaltasia artisteja. Rajapinnan palautta
 linkkeinä jatkohakuihin.
 
 Huom! Rajapinta vaatii toimiakseen Last.fm API-avaimen.
+
+Github pages:
+https://jgrasscape.github.io/SOKE-LASTFM/
