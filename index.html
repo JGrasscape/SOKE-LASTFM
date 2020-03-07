@@ -14,17 +14,19 @@
 
         <input type="text" name="inputArtist" value="" v-model="artist" @keyup.enter="getArtist(artist)" placeholder="Haettava artisti" v-show="!askApi">
 
-        <h2>{{ artistName }}</h2>        
-        <img :src="artistPic"/>
-        <p class="summary">{{ summary }}</p>
+        <transition-group name="fade">
+            <h2 :key="artistName">{{ artistName }}</h2>        
+            <img :src="artistPic" :key="artistPic"/>
+            <p class="summary" :key="summary">{{ summary }}</p>
 
-        <h3>{{ genreTitle }}</h3>
-        <div class="links" v-for="tag in tags" @click="getGenre(tag.name)">{{ tag.name }}</div>
+            <h3 :key="genreTitle">{{ genreTitle }}</h3>
+            <div class="links" v-for="tag in tags" @click="getGenre(tag.name)" :key="tag.name">{{ tag.name }}</div>
 
-        <h3>{{ similarTitle }}</h3>
-        <div class="links" v-for="artist in similars" @click="getArtist(artist.name)">{{ artist.name }}</div>
+            <h3 :key="similarTitle">{{ similarTitle }}</h3>
+            <div class="links" v-for="artist in similars" @click="getArtist(artist.name)" :key="artist.name">{{ artist.name }}</div>
 
-        <p>{{ result }}</p>
+            <p :key="result">{{ result }}</p>
+        </transition-group>
     </div>
     <div id="footer">
         <p>&copy; Janne Ruohoniemi</p>
